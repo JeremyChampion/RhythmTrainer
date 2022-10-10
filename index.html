@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Metronome</title>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/eedbdf4523.js" crossorigin="anonymous"></script>
+
+  <script src="js/app.js" type="module"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+  <div id="Menu" class="panel">
+
+    <div class="panel-header">Main Menu</div>
+
+    <div class="panel-body">
+
+      <div class="options-container">
+
+        <div class="tempo-options">
+
+          <div class="options-title">Tempo</div>
+
+          <div>
+            <span id="TempoLabel" style="font-size:48px;">100</span>
+            <span>BPM</span>
+          </div>
+
+          <div>
+
+            <button id="DecreaseTempo" type="button"><i class="fas fa-minus"></i></button>
+
+            <input id="TempoSlider" class="slider" type="range" min="30" max="300" value="100">
+
+            <button id="IncreaseTempo" type="button"><i class="fas fa-plus"></i></button>
+
+          </div>
+
+        </div>
+
+        <div class="duration-options">
+
+          <div class="options-title">Duration</div>
+
+          <label for="5">
+            <input name="Duration" type="radio" id="5" value="5" /> 5 Bars</label>
+          <label for="10">
+            <input name="Duration" type="radio" id="10" value="10" checked /> 10 Bars</label>
+          <label for="25">
+            <input name="Duration" type="radio" id="25" value="25" /> 25 Bars</label>
+          <label for="50">
+            <input name="Duration" type="radio" id="50" value="50" /> 50 Bars</label>
+          <label for="100">
+            <input name="Duration" type="radio" id="100" value="100" /> 100 Bars</label>
+
+        </div>
+
+        <div class="rhythm-options">
+
+          <div class="options-title">Rhythm Options</div>
+
+          <label for="Whole">
+            <input type="checkbox" name="Whole" checked /> 1 - Whole Notes</label>
+          <label for="Half">
+            <input type="checkbox" name="Half" checked /> 1/2 - Half Notes</label>
+          <label for="Quarter">
+            <input type="checkbox" name="Quarter" checked /> 1/4 - Quarter Notes</label>
+          <label class="" for="Eighth">
+            <input type="checkbox" name="Eighth"/> 1/8 - Eighth Notes</label>
+          <label class="disabled" for="Sixteenth">
+            <input type="checkbox" name="Sixteenth" disabled="disabled"/> 1/16 - Sixteenth Notes</label>
+          <label class="disabled" for="Thirtysecond">
+            <input type="checkbox" name="Thirtysecond" disabled="disabled"/> 1/32 - Thirty-second Notes</label>
+
+        </div>
+
+      </div>
+
+      <div class="button-container">
+
+        <button id="StartButton" class="start-button" type="button">Start</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="Drill" class="panel" style="display:none;">
+
+    <div class="panel-header">Rhythm Drill</div>
+
+    <div class="panel-body">
+
+      <div id="RhythmBox">
+    
+        <div id="ScoreDiv">
+          <span id="ScoreCorrect">0</span>
+          <span>/</span>
+          <span id="ScoreTotal">0</span>
+        </div>
+    
+        <div id="DrillDiv">
+        </div>
+    
+      </div>
+    
+    </div>
+
+  </div>
+
+  </div>
+
+  <div id="Score" class="panel" style="display:none;">
+
+    <div class="panel-header">Score</div>
+
+    <div class="panel-body">
+
+      <div>
+        <label>Tempo: </label>
+        <span name="Tempo"></span>
+      </div>
+
+      <div>
+        <label>Total Bars: </label>
+        <span name="TotalBars"></span>
+      </div>
+
+      <div>
+        <label>Total Notes: </label>
+        <span name="TotalNotes"></span>
+      </div>
+
+      <div>
+        <label>Correct: </label>
+        <span name="Correct"></span>
+      </div>
+
+      <div>
+        <label>Incorrect: </label>
+        <span name="Incorrect"></span>
+      </div>
+
+      <div>
+        <label>Accuracy: </label>
+        <span name="Accuracy"></span>
+      </div>
+
+      <div class="button-container">
+
+        <button id="MainMenuButton" class="start-button" type="button">Main Menu</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

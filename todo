@@ -1,0 +1,8 @@
+* Make code that gets the elements to color modular
+* Fix barlines
+* Make the release more forgiving
+- Clean up code and remove all the extra versions
+- Make the note.status more elegant
+- On "Rhythm Options", clicking the label should check the box
+- Currently a note is incorect if it is not attempted after 0.25 of the target attack. This should not be hard-coded. It needs to be based on the tempo, or the notes won't get removed quick enough at fast tempos.
+- Consider revising the forgiveness rate for attacks. It feels a little unfair at faster tempos. Maybe the forgiveness rate should be based on the tempo.
