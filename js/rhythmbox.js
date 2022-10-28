@@ -52,6 +52,7 @@ class RhythmBox {
     this.secondsPerBeat = 60.0 / this.options.tempo;
     this.targetDuration = this.secondsPerBeat * 4.0;
     this.speed = (this.width - this.targetX) / this.targetDuration;
+    this.currentMeasure = -1;
 
     if (this.options.notes.whole) {
       this.notePool.push(4);
@@ -683,8 +684,10 @@ class RhythmBox {
     silentOsc.stop(scheduleTime);
 
     this.measuresScheduled++;
+    debugger
+    this.currentMeasure++;
     
-    this.container.querySelector('#ScoreDiv').querySelector('#ScoreCorrect').innerText = this.measuresScheduled;
+    this.container.querySelector('#ScoreDiv').querySelector('#ScoreCorrect').innerText = this.currentMeasure++;
 
   }
 
@@ -896,9 +899,7 @@ class RhythmBox {
     silentOsc.stop(scheduleTime);
 
     this.measuresScheduled++;
-    
-    this.container.querySelector('#ScoreDiv').querySelector('#ScoreCorrect').innerText = this.measuresScheduled;
-
+        
   }
 
   attackNote(e) {
@@ -1028,6 +1029,11 @@ class RhythmBox {
           self.end();
         }
 
+      }
+
+      if (data.beat == 1) {
+        self.currentMeasure++;
+        self.container.querySelector('#ScoreDiv').querySelector('#ScoreCorrect').innerText = self.currentMeasure;
       }
 
     };
