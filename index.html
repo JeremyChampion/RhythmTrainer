@@ -18,150 +18,174 @@
 
   <div class="container">
 
-    <div class="banner">
-      <img src="./img/logo.png" alt="Champion Music Studio" height="100">
+    <div class="header">
+
+      <div class="center-clamp">
+        <img src="./img/logo.png" alt="Champion Music Studio" height="100">
+      </div>
+
     </div>
   
-    <div id="Menu" class="panel">
+    <div class="body">
+
+      <div class="center-clamp">
+
+        <div id="Menu" class="panel">
   
-      <div class="panel-header">Main Menu</div>
-  
-      <div class="panel-body">
-  
-        <div class="option-container">
-  
-          <div class="option tempo-options">
-  
-            <div class="option-title">Tempo</div>
-  
-            <div>
-              <span id="TempoLabel" style="font-size:48px;">100</span>
-              <span>BPM</span>
+          <div class="panel-header">Main Menu</div>
+      
+          <div class="panel-body">
+      
+            <div class="option-container">
+      
+              <div class="option tempo-options">
+      
+                <div class="option-title">Tempo</div>
+      
+                <div>
+                  <span id="TempoLabel" style="font-size:48px;">100</span>
+                  <span>BPM</span>
+                </div>
+      
+                <div>
+      
+                  <button id="DecreaseTempo" type="button"><i class="fas fa-minus"></i></button>
+      
+                  <input id="TempoSlider" class="slider" type="range" min="30" max="300" value="100">
+      
+                  <button id="IncreaseTempo" type="button"><i class="fas fa-plus"></i></button>
+      
+                </div>
+      
+              </div>
+      
+              <div class="option duration-options">
+      
+                <div class="option-title">Duration</div>
+      
+                <label for="5">
+                  <input name="Duration" type="radio" id="5" value="5" /> 5 Bars</label>
+                <label for="10">
+                  <input name="Duration" type="radio" id="10" value="10" checked /> 10 Bars</label>
+                <label for="25">
+                  <input name="Duration" type="radio" id="25" value="25" /> 25 Bars</label>
+                <label for="50">
+                  <input name="Duration" type="radio" id="50" value="50" /> 50 Bars</label>
+                <label for="100">
+                  <input name="Duration" type="radio" id="100" value="100" /> 100 Bars</label>
+      
+              </div>
+      
+              <div class="option rhythm-options">
+      
+                <div class="option-title">Rhythm Options</div>
+      
+                <label><input type="checkbox" name="Whole" checked /> 1 - Whole Notes</label>
+                <label><input type="checkbox" name="Half" checked /> 1/2 - Half Notes</label>
+                <label><input type="checkbox" name="Quarter" checked /> 1/4 - Quarter Notes</label>
+                <label><input type="checkbox" name="Eighth"/> 1/8 - Eighth Notes</label>
+                <label class="disabled"><input type="checkbox" name="Sixteenth" disabled="disabled"/> 1/16 - Sixteenth Notes</label>
+                <label class="disabled"><input type="checkbox" name="Thirtysecond" disabled="disabled"/> 1/32 - Thirty-second Notes</label>
+      
+              </div>
+      
             </div>
-  
-            <div>
-  
-              <button id="DecreaseTempo" type="button"><i class="fas fa-minus"></i></button>
-  
-              <input id="TempoSlider" class="slider" type="range" min="30" max="300" value="100">
-  
-              <button id="IncreaseTempo" type="button"><i class="fas fa-plus"></i></button>
-  
+      
+            <div class="button-container">
+      
+              <button id="StartButton" class="start-button" type="button">Start</button>
+      
             </div>
-  
+      
           </div>
-  
-          <div class="option duration-options">
-  
-            <div class="option-title">Duration</div>
-  
-            <label for="5">
-              <input name="Duration" type="radio" id="5" value="5" /> 5 Bars</label>
-            <label for="10">
-              <input name="Duration" type="radio" id="10" value="10" checked /> 10 Bars</label>
-            <label for="25">
-              <input name="Duration" type="radio" id="25" value="25" /> 25 Bars</label>
-            <label for="50">
-              <input name="Duration" type="radio" id="50" value="50" /> 50 Bars</label>
-            <label for="100">
-              <input name="Duration" type="radio" id="100" value="100" /> 100 Bars</label>
-  
-          </div>
-  
-          <div class="option rhythm-options">
-  
-            <div class="option-title">Rhythm Options</div>
-  
-            <label><input type="checkbox" name="Whole" checked /> 1 - Whole Notes</label>
-            <label><input type="checkbox" name="Half" checked /> 1/2 - Half Notes</label>
-            <label><input type="checkbox" name="Quarter" checked /> 1/4 - Quarter Notes</label>
-            <label><input type="checkbox" name="Eighth"/> 1/8 - Eighth Notes</label>
-            <label class="disabled"><input type="checkbox" name="Sixteenth" disabled="disabled"/> 1/16 - Sixteenth Notes</label>
-            <label class="disabled"><input type="checkbox" name="Thirtysecond" disabled="disabled"/> 1/32 - Thirty-second Notes</label>
-  
-          </div>
-  
+      
         </div>
-  
-        <div class="button-container">
-  
-          <button id="StartButton" class="start-button" type="button">Start</button>
-  
+      
+        <div id="Drill" class="panel" style="display:none;">
+      
+          <div class="panel-header">Rhythm Drill</div>
+      
+          <div class="panel-body">
+      
+            <div id="RhythmBox">
+          
+              <div id="ScoreDiv">
+                <span>Bar</span>
+                <span id="ScoreCorrect">0</span>
+                <span>of</span>
+                <span id="ScoreTotal">0</span>
+              </div>
+          
+              <div id="DrillDiv">
+              </div>
+          
+            </div>
+          
+          </div>
+      
         </div>
+      
+        <div id="Score" class="panel" style="display:none;">
+      
+          <div class="panel-header">Score</div>
+      
+          <div class="panel-body">
+      
+            <div>
+              <label>Tempo: </label>
+              <span name="Tempo"></span>
+            </div>
+      
+            <div>
+              <label>Total Bars: </label>
+              <span name="TotalBars"></span>
+            </div>
+      
+            <div>
+              <label>Total Notes: </label>
+              <span name="TotalNotes"></span>
+            </div>
+      
+            <div>
+              <label>Correct: </label>
+              <span name="Correct"></span>
+            </div>
+      
+            <div>
+              <label>Incorrect: </label>
+              <span name="Incorrect"></span>
+            </div>
+      
+            <div>
+              <label>Accuracy: </label>
+              <span name="Accuracy"></span>
+            </div>
+      
+            <div class="button-container">
+      
+              <button id="MainMenuButton" class="start-button" type="button">Main Menu</button>
+      
+            </div>
+      
+          </div>
+      
+        </div>  
   
       </div>
   
     </div>
-  
-    <div id="Drill" class="panel" style="display:none;">
-  
-      <div class="panel-header">Rhythm Drill</div>
-  
-      <div class="panel-body">
-  
-        <div id="RhythmBox">
+
+    <div class="footer">
+
+      <div class="social-container">
       
-          <div id="ScoreDiv">
-            <span>Bar</span>
-            <span id="ScoreCorrect">0</span>
-            <span>of</span>
-            <span id="ScoreTotal">0</span>
-          </div>
-      
-          <div id="DrillDiv">
-          </div>
-      
-        </div>
-      
+        <a href="https://www.instagram.com/championmusicstudio/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/championmusicstudio" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="mailto:championmusicstudio@gmail.com"><i class="far fa-envelope"></i></a>
+
       </div>
-  
+
     </div>
-  
-    <div id="Score" class="panel" style="display:none;">
-  
-      <div class="panel-header">Score</div>
-  
-      <div class="panel-body">
-  
-        <div>
-          <label>Tempo: </label>
-          <span name="Tempo"></span>
-        </div>
-  
-        <div>
-          <label>Total Bars: </label>
-          <span name="TotalBars"></span>
-        </div>
-  
-        <div>
-          <label>Total Notes: </label>
-          <span name="TotalNotes"></span>
-        </div>
-  
-        <div>
-          <label>Correct: </label>
-          <span name="Correct"></span>
-        </div>
-  
-        <div>
-          <label>Incorrect: </label>
-          <span name="Incorrect"></span>
-        </div>
-  
-        <div>
-          <label>Accuracy: </label>
-          <span name="Accuracy"></span>
-        </div>
-  
-        <div class="button-container">
-  
-          <button id="MainMenuButton" class="start-button" type="button">Main Menu</button>
-  
-        </div>
-  
-      </div>
-  
-    </div>  
 
   </div>
 
