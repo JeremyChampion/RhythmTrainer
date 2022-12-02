@@ -32,6 +32,18 @@
       flex: 0 1 auto;
   }
 
+  .justify-content-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .justify-content-around {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
   .center-clamp {
     width: 100%;
     max-width: 1200px;
@@ -154,13 +166,16 @@
     background-color: #fff;
     color: #6c757d;
     width: 26px;
+    min-width: 26px;
     height: 26px;
+    min-height: 26px;
   }
 
   .tempo-options button:hover {
     color: #fff;
     background-color: #6c757d;
     border-color: #6c757d;
+    cursor: pointer;
   }
 
   .tempo-options button:focus {
